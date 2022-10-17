@@ -1,0 +1,9 @@
+.logo {
+    font-family: var(--logo-font);
+    @include font(26px, 1.19, inherit, 700);
+    text-decoration: none;
+
+    &__web {
+        color: var(--accent-color);
+    }
+}

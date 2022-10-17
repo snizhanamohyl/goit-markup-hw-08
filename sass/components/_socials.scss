@@ -1,0 +1,27 @@
+.socials {
+    @extend %flex-centered;
+
+    &__item:not(:last-child) {
+        margin-right: 10px;
+    }
+
+    &__link {
+        width: 44px;
+        height: 44px;
+        color: var(--icon-color);
+        background-color: var(--white);
+        border-radius: 50%;
+        @extend %flex-centered;
+        transition: color var(--transition-time) var(--transition-function), background-color var(--transition-time) var(--transition-function);
+    }
+
+    &__link.link:hover,
+    &__link.link:focus {
+        color: var(--white);
+        background-color: var(--accent-color);
+    }
+
+    &__icon {
+        fill: currentColor;
+    }
+}
