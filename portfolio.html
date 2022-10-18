@@ -23,9 +23,11 @@
                     <li class="menu__item"><a class="menu__link link menu__link--current" href="./portfolio.html">Портфоліо</a></li>
                     <li class="menu__item"><a class="menu__link link" href="#">Контакти</a></li>
                 </ul>
-                <svg class="header__menu-icon" width="40" height="40">
-                    <use href="/images/svg/icons.svg#icon-menu"></use>
-                </svg>
+                <button type="button" class="menu-btn menu-open">
+                    <svg class="header__menu-icon" width="40" height="40">
+                        <use href="/images/svg/icons.svg#icon-menu"></use>
+                    </svg>
+                </button>
             </nav>
             <ul class="contacts list">
                 <li class="contacts__item">
@@ -45,6 +47,37 @@
                     </a>
                 </li>
             </ul>
+            <div class="mob-menu visually-hidden">
+                <button type="button" class="mob-menu__close-btn close-btn menu-close">
+                    <svg class="close-btn__icon" width="40" height="40">
+                        <use href="./images/svg/icons.svg#icon-close-btn" />
+                    </svg>
+                </button>
+                <ul class="mob-nav list">
+                    <li class="mob-nav__item"><a class="mob-nav__link link"
+                            href="./index.html">Студія</a></li>
+                    <li class="mob-nav__item"><a class="mob-nav__link link mob-nav__link--current" href="./portfolio.html">Портфоліо</a></li>
+                    <li class="mob-nav__item"><a class="mob-nav__link link" href="#">Контакти</a></li>
+                </ul>
+                <ul class="mob-contacts list">
+                    <li class="mob-contacts__item">
+                        <a class="mob-contacts__link-mail link" href="mailto:info@devstudio.com">
+                            <p class="mob-contacts__mail">info@devstudio.com</p>
+                        </a>
+                    </li>
+                    <li class="mob-contacts__item">
+                        <a class="mob-contacts__link-tel link" href="tel:+380961111111">
+                            <p class="mob-contacts__tel">+38 096 111 11 11</p>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="mob-socials list">
+                    <li class="mob-socials__item"><a class="mob-socials__link link" href="#">Instagram</a></li>
+                    <li class="mob-socials__item"><a class="mob-socials__link link" href="#">Twitter</a></li>
+                    <li class="mob-socials__item"><a class="mob-socials__link link" href="#">Facebook</a></li>
+                    <li class="mob-socials__item"><a class="mob-socials__link link" href="#">LinkedIn</a></li>
+                </ul>
+            </div>
         </div>
     </header>
     <main>
@@ -63,7 +96,21 @@
                     <li class="card-list__item item">
                         <a class="card link" href="#">
                             <div class="card__img-wrap">
-                                <img class="card__img" src="./images/projects/projects-img-1.jpg" alt="Технокряк" width="370" height="294">
+                                <picture>
+                                    <source srcset="
+                                        ./images/projects/projects-img-1-desktop-1x.jpg 1x,
+                                        ./images/projects/projects-img-1-desktop-2x.jpg 2x
+                                    " media="(min-width: 1200px)">
+                                    <source srcset="
+                                        ./images/projects/projects-img-1-tablet-1x.jpg 1x,
+                                        ./images/projects/projects-img-1-tablet-2x.jpg 2x
+                                    " media="(min-width: 768px)">
+                                    <source srcset="
+                                        ./images/projects/projects-img-1-mobile-1x.jpg 1x,
+                                        ./images/projects/projects-img-1-mobile-2x.jpg 2x
+                                    " media="(max-width: 768px)">
+                                    <img class="card__img" src="./images/projects/projects-img-1-mobile-1x.jpg" alt="Технокряк">
+                                </picture>
                                 <div class="card__descr-wrap">
                                     <p class="card__descr">Ресурс пропонує комплексні пропозиції з різним рівнем функціоналу та сервісів. Все це
                                         дозволить відвідувачу отримати
@@ -79,8 +126,21 @@
                     <li class="card-list__item item">
                         <a class="card link" href="#">
                             <div class="card__img-wrap">
-                                <img class="card__img" src="./images/projects/projects-img-2.jpg"
-                                    alt="Постер New Orlean vs Golden Star" width="370" height="294">
+                                <picture>
+                                    <source srcset="
+                                        ./images/projects/projects-img-2-desktop-1x.jpg 1x,
+                                        ./images/projects/projects-img-2-desktop-2x.jpg 2x
+                                    " media="(min-width: 1200px)">
+                                    <source srcset="
+                                        ./images/projects/projects-img-2-tablet-1x.jpg 1x,
+                                        ./images/projects/projects-img-2-tablet-2x.jpg 2x
+                                    " media="(min-width: 768px)">
+                                    <source srcset="
+                                        ./images/projects/projects-img-2-mobile-1x.jpg 1x,
+                                        ./images/projects/projects-img-2-mobile-2x.jpg 2x
+                                    " media="(max-width: 768px)">
+                                    <img class="card__img" src="./images/projects/projects-img-2-mobile-1x.jpg" alt="Постер New Orlean vs Golden Star">
+                                </picture>
                                 <div class="card__descr-wrap">
                                     <p class="card__descr">Ресурс пропонує комплексні пропозиції з різним рівнем функціоналу та сервісів. Все це
                                     дозволить відвідувачу отримати
@@ -96,8 +156,26 @@
                     <li class="card-list__item item">
                         <a class="card link" href="#">
                             <div class="card__img-wrap">
-                                <img class="card__img" src="./images/projects/projects-img-3.jpg" alt="Ресторан Seafood" width="370"
-                                    height="294">
+                                <picture>
+                                    <source
+                                        srcset="
+                                            ./images/projects/projects-img-3-desktop-1x.jpg 1x,
+                                            ./images/projects/projects-img-3-desktop-2x.jpg 2x
+                                        "
+                                        media="(min-width: 1200px)">
+                                    <source
+                                        srcset="
+                                            ./images/projects/projects-img-3-tablet-1x.jpg 1x,
+                                            ./images/projects/projects-img-3-tablet-2x.jpg 2x
+                                        "
+                                        media="(min-width: 768px)">
+                                    <source srcset="
+                                            ./images/projects/projects-img-3-mobile-1x.jpg 1x,
+                                            ./images/projects/projects-img-3-mobile-2x.jpg 2x
+                                        "
+                                        media="(max-width: 768px)">
+                                    <img class="card__img" src="./images/projects/projects-img-3-mobile-1x.jpg" alt="Ресторан Seafood">
+                                </picture>
                                 <div class="card__descr-wrap">
                                     <p class="card__descr">Ресурс пропонує комплексні пропозиції з різним рівнем функціоналу та сервісів. Все це
                                         дозволить відвідувачу отримати
@@ -113,7 +191,21 @@
                     <li class="card-list__item item">
                         <a class="card link" href="#">
                             <div class="card__img-wrap">
-                                <img class="card__img" src="./images/projects/projects-img-4.jpg" alt="Проєкт Prime" width="370" height="294">
+                                <picture>
+                                    <source srcset="
+                                        ./images/projects/projects-img-4-desktop-1x.jpg 1x,
+                                        ./images/projects/projects-img-4-desktop-2x.jpg 2x
+                                    " media="(min-width: 1200px)">
+                                    <source srcset="
+                                        ./images/projects/projects-img-4-tablet-1x.jpg 1x,
+                                        ./images/projects/projects-img-4-tablet-2x.jpg 2x
+                                    " media="(min-width: 768px)">
+                                    <source srcset="
+                                        ./images/projects/projects-img-4-mobile-1x.jpg 1x,
+                                        ./images/projects/projects-img-4-mobile-2x.jpg 2x
+                                    " media="(max-width: 768px)">
+                                    <img class="card__img" src="./images/projects/projects-img-4-mobile-1x.jpg" alt="Проєкт Prime">
+                                </picture>
                                 <div class="card__descr-wrap">
                                     <p class="card__descr">Ресурс пропонує комплексні пропозиції з різним рівнем функціоналу та сервісів. Все це
                                         дозволить відвідувачу отримати
@@ -129,7 +221,21 @@
                     <li class="card-list__item item">
                         <a class="card link" href="#">
                             <div class="card__img-wrap">
-                                <img class="card__img" src="./images/projects/projects-img-5.jpg" alt="Проєкт Boxes" width="370" height="294">
+                                <picture>
+                                    <source srcset="
+                                        ./images/projects/projects-img-5-desktop-1x.jpg 1x,
+                                        ./images/projects/projects-img-5-desktop-2x.jpg 2x
+                                    " media="(min-width: 1200px)">
+                                    <source srcset="
+                                        ./images/projects/projects-img-5-tablet-1x.jpg 1x,
+                                        ./images/projects/projects-img-5-tablet-2x.jpg 2x
+                                    " media="(min-width: 768px)">
+                                    <source srcset="
+                                        ./images/projects/projects-img-5-mobile-1x.jpg 1x,
+                                        ./images/projects/projects-img-5-mobile-2x.jpg 2x
+                                    " media="(max-width: 768px)">
+                                    <img class="card__img" src="./images/projects/projects-img-5-mobile-1x.jpg" alt="Проєкт Boxes">
+                                </picture>
                                 <div class="card__descr-wrap">
                                     <p class="card__descr">Ресурс пропонує комплексні пропозиції з різним рівнем функціоналу та сервісів. Все це
                                         дозволить відвідувачу отримати
@@ -145,8 +251,21 @@
                     <li class="card-list__item item">
                         <a class="card link" href="#">
                             <div class="card__img-wrap">
-                                <img class="card__img" src="./images/projects/projects-img-6.jpg" alt="Inspiration has no Borders" width="370"
-                                    height="294">
+                                <picture>
+                                    <source srcset="
+                                        ./images/projects/projects-img-6-desktop-1x.jpg 1x,
+                                        ./images/projects/projects-img-6-desktop-2x.jpg 2x
+                                    " media="(min-width: 1200px)">
+                                    <source srcset="
+                                        ./images/projects/projects-img-6-tablet-1x.jpg 1x,
+                                        ./images/projects/projects-img-6-tablet-2x.jpg 2x
+                                    " media="(min-width: 768px)">
+                                    <source srcset="
+                                        ./images/projects/projects-img-6-mobile-1x.jpg 1x,
+                                        ./images/projects/projects-img-6-mobile-2x.jpg 2x
+                                    " media="(max-width: 768px)">
+                                    <img class="card__img" src="./images/projects/projects-img-6-mobile-1x.jpg" alt="Inspiration has no Borders">
+                                </picture>
                                 <div class="card__descr-wrap">
                                     <p class="card__descr">Ресурс пропонує комплексні пропозиції з різним рівнем функціоналу та сервісів. Все це
                                         дозволить відвідувачу отримати
@@ -163,8 +282,21 @@
                     <li class="card-list__item item">
                         <a class="card link" href="#">
                             <div class="card__img-wrap">
-                                <img class="card__img" src="./images/projects/projects-img-7.jpg" alt="Видання Limited Edition"
-                                width="370" height="294">
+                                <picture>
+                                    <source srcset="
+                                        ./images/projects/projects-img-7-desktop-1x.jpg 1x,
+                                        ./images/projects/projects-img-7-desktop-2x.jpg 2x
+                                    " media="(min-width: 1200px)">
+                                    <source srcset="
+                                        ./images/projects/projects-img-7-tablet-1x.jpg 1x,
+                                        ./images/projects/projects-img-7-tablet-2x.jpg 2x
+                                    " media="(min-width: 768px)">
+                                    <source srcset="
+                                        ./images/projects/projects-img-7-mobile-1x.jpg 1x,
+                                        ./images/projects/projects-img-7-mobile-2x.jpg 2x
+                                    " media="(max-width: 768px)">
+                                    <img class="card__img" src="./images/projects/projects-img-7-mobile-1x.jpg" alt="Видання Limited Edition">
+                                </picture>
                                     <div class="card__descr-wrap">
                                         <p class="card__descr">Ресурс пропонує комплексні пропозиції з різним рівнем функціоналу та сервісів. Все це
                                             дозволить відвідувачу отримати
@@ -181,7 +313,21 @@
                     <li class="card-list__item item">
                         <a class="card link" href="#">
                             <div class="card__img-wrap">
-                                <img class="card__img" src="./images/projects/projects-img-8.jpg" alt="Проєкт LAB" width="370" height="294">
+                                <picture>
+                                    <source srcset="
+                                        ./images/projects/projects-img-8-desktop-1x.jpg 1x,
+                                        ./images/projects/projects-img-8-desktop-2x.jpg 2x
+                                    " media="(min-width: 1200px)">
+                                    <source srcset="
+                                        ./images/projects/projects-img-8-tablet-1x.jpg 1x,
+                                        ./images/projects/projects-img-8-tablet-2x.jpg 2x
+                                    " media="(min-width: 768px)">
+                                    <source srcset="
+                                        ./images/projects/projects-img-8-mobile-1x.jpg 1x,
+                                        ./images/projects/projects-img-8-mobile-2x.jpg 2x
+                                    " media="(max-width: 768px)">
+                                    <img class="card__img" src="./images/projects/projects-img-8-mobile-1x.jpg" alt="Проєкт LAB">
+                                </picture>
                                 <div class="card__descr-wrap">
                                     <p class="card__descr">Ресурс пропонує комплексні пропозиції з різним рівнем функціоналу та сервісів. Все це
                                         дозволить відвідувачу отримати
@@ -198,8 +344,21 @@
                     <li class="card-list__item item">
                         <a class="card link" href="#">
                             <div class="card__img-wrap">
-                                <img class="card__img" src="./images/projects/projects-img-9.jpg" alt="Growing Business" width="370"
-                                    height="294">
+                                <picture>
+                                    <source srcset="
+                                        ./images/projects/projects-img-9-desktop-1x.jpg 1x,
+                                        ./images/projects/projects-img-9-desktop-2x.jpg 2x
+                                    " media="(min-width: 1200px)">
+                                    <source srcset="
+                                        ./images/projects/projects-img-9-tablet-1x.jpg 1x,
+                                        ./images/projects/projects-img-9-tablet-2x.jpg 2x
+                                    " media="(min-width: 768px)">
+                                    <source srcset="
+                                        ./images/projects/projects-img-9-mobile-1x.jpg 1x,
+                                        ./images/projects/projects-img-9-mobile-2x.jpg 2x
+                                    " media="(max-width: 768px)">
+                                    <img class="card__img" src="./images/projects/projects-img-9-mobile-1x.jpg" alt="Growing Business">
+                                </picture>
                                 <div class="card__descr-wrap">
                                     <p class="card__descr">Ресурс пропонує комплексні пропозиції з різним рівнем функціоналу та сервісів. Все це
                                         дозволить відвідувачу отримати
@@ -283,5 +442,6 @@
                 </div>
             </form>>
         </div>
+        <script src="./js/mobile-menu.js"></script>
     </footer>
 </body>

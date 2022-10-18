@@ -11,13 +11,16 @@
 
 .modal {
     padding: 40px;
-    width: 528px;
-    height: 581px;
+    width: 450px;
     background-color: var(--white);
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+
+    @include desktop {
+        width: 528px;
+    }
 }
 
 .backdrop.is-hidden {
@@ -124,14 +127,15 @@
         @extend %flex-centered;
         margin-bottom: 30px;
 
-        @include font(14px, 1.71, 0.03em, inherit);
-        font-size: 14px;
-        line-height: 1.71;
-        letter-spacing: 0.03em;
+        @include font(12px, 1.17, 0.03em, inherit);
         color: var(--second-primary-color);
 
         &:hover {
             cursor: pointer;
+        }
+
+        @include desktop {
+            @include font(14px, 1.71, 0.03em, inherit);
         }
     }
 

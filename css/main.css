@@ -16,7 +16,7 @@
   --logo-font: "Raleway", sans-serif;
 }
 
-.card__descr-wrap, .client-logo__link, .clients__list, .socials__link, .socials, .sector__wrap, .feature__svg-wrap, .menu {
+.card__descr-wrap, .form__accept, .close-btn, .client-logo__link, .clients__list, .socials__link, .socials, .sector__wrap, .feature__svg-wrap, .menu {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -784,6 +784,201 @@ section.other-paddings {
   }
 }
 
+.backdrop {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.2);
+  opacity: 1;
+  transition: opacity var(--transition-time) var(--transition-function);
+}
+
+.modal {
+  padding: 40px;
+  width: 450px;
+  background-color: var(--white);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+@media screen and (min-width: 1200px) {
+  .modal {
+    width: 528px;
+  }
+}
+
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+.close-btn {
+  width: 30px;
+  height: 30px;
+  color: var(--black);
+  background: var(--white);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  cursor: pointer;
+  transition: color var(--transition-time) var(--transition-function);
+}
+.close-btn:hover, .close-btn:focus {
+  color: var(--accent-color);
+}
+.close-btn__icon {
+  fill: currentColor;
+}
+
+.form__call-to-action {
+  margin-bottom: 12px;
+  font-size: 20px;
+  line-height: 1.15;
+  letter-spacing: inherit;
+  font-weight: 700;
+  text-align: center;
+}
+.form__element {
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.01em;
+  font-weight: inherit;
+}
+.form__label {
+  margin-bottom: 4px;
+  color: var(--second-primary-color);
+}
+.form__input {
+  padding-right: 12px;
+  padding-left: 42px;
+  height: 40px;
+  width: 100%;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  transition: border-color var(--transition-time) var(--transition-function);
+}
+.form__input-wrap:focus-within .form__input, .form__input:hover {
+  outline: none;
+  border-color: var(--accent-color);
+  cursor: pointer;
+}
+.form__input:hover + .form__input-icon {
+  fill: var(--accent-color);
+}
+.form__input-wrap {
+  position: relative;
+}
+.form__input-icon {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+  fill: currentColor;
+  transition: fill var(--transition-time) var(--transition-function);
+}
+.form__input-wrap:focus-within .form__input-icon {
+  fill: var(--accent-color);
+}
+.form__element--comment {
+  margin-bottom: 20px;
+}
+.form__accept {
+  margin-bottom: 30px;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.03em;
+  font-weight: inherit;
+  color: var(--second-primary-color);
+}
+.form__accept:hover {
+  cursor: pointer;
+}
+@media screen and (min-width: 1200px) {
+  .form__accept {
+    font-size: 14px;
+    line-height: 1.71;
+    letter-spacing: 0.03em;
+    font-weight: inherit;
+  }
+}
+.form__accept-link {
+  color: var(--accent-color);
+  text-decoration: underline;
+}
+.form__btn {
+  padding: 10px 52px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+input[type=textarea] {
+  height: 120px;
+}
+
+.textarea {
+  height: 120px;
+  padding: 12px 16px;
+  resize: none;
+}
+.textarea::-moz-placeholder {
+  color: rgba(117, 117, 117, 0.5);
+}
+.textarea:-ms-input-placeholder {
+  color: rgba(117, 117, 117, 0.5);
+}
+.textarea::placeholder {
+  color: rgba(117, 117, 117, 0.5);
+}
+.textarea:focus-visible {
+  outline: none;
+}
+.textarea:focus {
+  border-color: var(--accent-color);
+}
+
+.custom-checkbox {
+  display: flex;
+  position: relative;
+  margin-right: 8px;
+}
+.custom-checkbox__box {
+  transition: fill var(--transition-time) var(--transition-function), background-color var(--transition-time) var(--transition-function);
+}
+.custom-checkbox__tick {
+  position: absolute;
+  top: 0;
+  left: 0;
+  fill: transparent;
+  transition: fill var(--transition-time) var(--transition-function);
+}
+.custom-checkbox:hover .custom-checkbox__box {
+  fill: var(--accent-color);
+}
+.form__checkbox:checked + .custom-checkbox > .custom-checkbox__box {
+  fill: var(--accent-color);
+  background-color: var(--accent-color);
+  border-radius: 2px;
+}
+.form__checkbox:checked + .custom-checkbox > .custom-checkbox__tick {
+  fill: var(--white);
+}
+.form__checkbox:focus + .custom-checkbox > .custom-checkbox__box {
+  fill: var(--accent-color);
+}
+
 @media screen and (min-width: 1200px) {
   .projects {
     padding-top: 94px;
@@ -943,4 +1138,90 @@ section.other-paddings {
   letter-spacing: inherit;
   font-weight: inherit;
   color: var(--second-primary-color);
+}
+
+.mob-menu {
+  min-width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 9;
+  background-color: white;
+}
+.mob-menu__close-btn {
+  border: none;
+  top: 10px;
+  right: 15px;
+}
+
+.mob-nav {
+  font-size: 40px;
+  line-height: 1.18;
+  letter-spacing: 0.02em;
+  font-weight: 500;
+  position: absolute;
+  top: 48px;
+  left: 40px;
+}
+.mob-nav__item {
+  margin-bottom: 32px;
+}
+.mob-nav__link {
+  color: var(--black);
+}
+.mob-nav__link--current {
+  color: var(--accent-color);
+}
+
+.mob-contacts {
+  position: absolute;
+  bottom: 134px;
+  left: 40px;
+}
+.mob-contacts__link-mail {
+  color: var(--accent-color);
+}
+.mob-contacts__mail {
+  font-size: 34px;
+  line-height: 1.18;
+  letter-spacing: 0.02em;
+  font-weight: 500;
+}
+.mob-contacts__tel {
+  font-size: 24px;
+  line-height: 1.17;
+  letter-spacing: 0.02em;
+  font-weight: 500;
+}
+.mob-contacts__link-tel {
+  color: var(--second-primary-color);
+}
+.mob-contacts__item {
+  margin-bottom: 32px;
+}
+
+.mob-socials {
+  position: absolute;
+  bottom: 48px;
+  left: 40px;
+  display: flex;
+}
+.mob-socials__item:not(:last-child) .mob-socials__link {
+  padding-right: 10px;
+  border-right: 1px solid rgba(33, 33, 33, 0.2);
+}
+.mob-socials__item:not(:first-child) .mob-socials__link {
+  padding-left: 10px;
+}
+.mob-socials__link {
+  color: var(--accent-color);
+  font-size: 18px;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  font-weight: 500;
+}
+
+.menu-btn {
+  background-color: transparent;
 }/*# sourceMappingURL=main.css.map */
