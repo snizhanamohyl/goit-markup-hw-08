@@ -1,11 +1,20 @@
 .footer {
     background-color: var(--secondary-background-color);
+    min-width: 480px;
 
     .container {
         display: flex;
-        align-items: baseline;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
         padding-top: 60px;
         padding-bottom: 60px;
+
+        @include desktop {
+            flex-direction: row;
+            text-align: left;
+            align-items: baseline;
+        }
     }
    
     .logo {
@@ -15,7 +24,16 @@
     }
 
     &__socials {
-        margin-left: 70px;
+        margin-bottom: 60px;
+
+        @include tablet {
+            margin-bottom: 0;
+            margin-left: 165px;
+        }
+
+        @include desktop {
+            margin-left: 70px;
+        }
     }
 
     & .socials__link {
@@ -26,9 +44,20 @@
 
 .address {
     font-style: normal;
+    margin-bottom: 60px;
+
+    &__list {
+        @include desktop {
+            margin-bottom: 0;
+        }
+    }
 
     &__list &__item:not(:last-child) {
-        margin-bottom: 9px;
+        margin-bottom: 8px;
+
+        @include desktop {
+            margin-bottom: 9px;
+        }
     }
 
     &__link {
@@ -40,13 +69,29 @@
             color: var(--white);
         }
     }
+
+    @include desktop {
+        margin-bottom: 0;
+    }
+}
+
+.contacts-wrap {
+    @include tablet {
+        display: flex;
+        align-items: baseline;
+    }
 }
 
 .subscription-form {
-    margin-left: 93px;
 
     &__wrap {
         display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @include desktop {
+            flex-direction: row;
+        }
     }
 
     &__element {
@@ -54,9 +99,10 @@
     }
 
     &__input {
-        width: 358px;
+        width: 450px;
         height: 50px;
         padding: 15px 16px;
+        margin-bottom: 20px;
 
         color: var(--white);
 
@@ -71,6 +117,11 @@
             border-color: var(--white);
             cursor: pointer;
         }
+
+        @include desktop {
+            margin-bottom: 0;
+            width: 358px;
+        }
     }
 
     &__input::placeholder {
@@ -80,12 +131,24 @@
     &__btn {
         display: flex;
         align-items: center;
-        padding: 10px 28px;
-        margin-left: 12px;
+        padding: 10px 28px 10px 31px;
+        
+        @include desktop {
+            margin-left: 12px;
+            padding-left: 28px;
+        }
     }
 
     &__icon {
-        margin-left: 10px;
+        margin-left: 12px;
         fill: currentColor;
+
+        @include desktop {
+            margin-left: 12px;
+        }
+    }
+
+    @include desktop {
+        margin-left: 93px;
     }
 }

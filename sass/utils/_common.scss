@@ -46,28 +46,47 @@ img {
     margin-right: auto;
     padding-left: 15px;
     padding-right: 15px;
-    width: 1200px;
+    width: 480px;
+
+    @include tablet {
+        width: 768px;
+    }
+
+    @include desktop {
+        width: 1200px;
+    }
 }
 
 section {
-    padding-top: 94px;
-    padding-bottom: 94px;
+    padding-top: 60px;
+    padding-bottom: 60px;
 
     &.other-paddings {
-        padding-top: 200px;
-        padding-bottom: 200px;
+        padding-top: 118px;
+        padding-bottom: 118px;
     }
 
-    &.no-bottom-padding {
-        padding-bottom: 0px;
+    @include desktop {
+        padding-top: 94px;
+        padding-bottom: 94px;
+
+        &.other-paddings {
+            padding-top: 200px;
+            padding-bottom: 200px;
+        }
     }
 }
 
 .section-title {
-    margin-bottom: 50px;
-
-    @include font(36px, 1.17, inherit, 700);
+    margin-bottom: 30px;
+    @include font(28px, 1.18, inherit, 700);
     text-align: center;
+
+    @include desktop {
+        margin-bottom: 30px;
+        font-size: 36px;
+        line-height: 1.17;
+    }    
 }
 
 .button {

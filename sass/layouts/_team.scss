@@ -1,33 +1,67 @@
 .team {
     background-color: var(--additional-background-color);
+    min-width: 480px;
 
     &__list {
-        display: flex;
-    }
+        @include tablet {
+            display: flex;
+            flex-wrap: wrap;
+        }
 
+        @include desktop {
+            flex-wrap: nowrap;
+        }
+    }
 }
 
 .person-card {
     background-color: var(--white);
     border-radius: 0px 0px 4px 4px;
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+    width: 100%;
 
-    .team__list &:not(:last-child) {
+    margin-bottom: 30px;
+    
+    @include desktop {
+        margin-bottom: 0;
         margin-right: 30px;
+    }
+
+    @include tablet {
+        width: calc((100% - 30px) / 2);
+
+        &:nth-child(2n+1) {
+            margin-right: 30px;
+        }
+
+        &:nth-last-child(-n + 2) {
+            margin-bottom: 0;
+        }
+    }
+
+    @include desktop {
+        flex-wrap: nowrap;
+        width: calc((100% - 90px) / 4);
+        margin-bottom: 0;
+
+        &:not(:last-child) {
+            margin-right: 30px;
+        }
     }
 
     &__wrap {
         padding-top: 30px;
-        padding-bottom: 30px;
+        padding-bottom: 24px;
+
+        @include desktop {
+            padding-bottom: 30px;
+        }
     }
 
     &__title {
         margin-bottom: 10px;
 
         @include font(16px, 1.17, inherit, 500);
-        // font-weight: 500;
-        // font-size: 16px;
-        // line-height: 1.17;
         text-align: center;
     }
 
@@ -35,9 +69,7 @@
         margin-bottom: 16px;
 
         @include font(16px, 1.19, inherit, inherit);
-        font-size: 16px;
-        line-height: 1.19;
         text-align: center;
-        color: var(--second-primary-color)
+        color: var(--second-primary-color);
     }
 }

@@ -1,9 +1,14 @@
 .logo {
     font-family: var(--logo-font);
-    @include font(26px, 1.19, inherit, 700);
+    @include font(24px, 1.17, inherit, 700);
     text-decoration: none;
 
     &__web {
         color: var(--accent-color);
+    }
+
+    @include desktop {
+        font-size: 26px;
+        line-height: 1.19;
     }
 }

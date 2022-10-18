@@ -1,22 +1,32 @@
-.advantages__list {
-    display: flex;
-
-    & .feature {
-        width: calc((100% - 90px) / 4);
+.advantages {
+    @include desktop {
+        padding-bottom: 0;
     }
+    
+    &__list {
+        @include tablet {
+            display: flex;
+            flex-wrap: wrap;
+        }
 
-    & .feature:not(:last-child) {
-        margin-right: 30px;
+        @include desktop {
+            flex-wrap: nowrap;
+        }
     }
 }
-
 .feature {
+    width: 100%;
+
+    &:not(:last-child) {
+        margin-bottom: 30px;
+    }
+
     &__svg-wrap {
         @extend %flex-centered;
         margin-bottom: 30px;
         height: 120px;
-        width: 270px;
-        
+        width: 100%;
+
         background-color: var(--additional-background-color);
         border-radius: 4px;
     }
@@ -25,10 +35,36 @@
         margin-bottom: 10px;
         @include font(inherit, 1.14, 0.03em, 700);
         text-transform: uppercase;
+
+        @media screen and (max-width: 768px) {
+            text-align: center;            
+        }
     }
 
     &__descr {
         line-height: 1.71;
-        color: var(--second-primary-color)
+        color: var(--second-primary-color);
+    }
+
+    @include tablet {
+        width: calc((100% - 30px) / 2);
+
+        &:nth-child(2n+1) {
+            margin-right: 30px;
+        }
+
+        &:nth-last-child(-n + 2) {
+            margin-bottom: 0;
+        }
+    }
+
+    @include desktop {
+        flex-wrap: nowrap;
+        width: calc((100% - 90px) / 4);
+
+        &:not(:last-child) {
+            margin-right: 30px;
+            margin-bottom: 0;
+        }
     }
 }

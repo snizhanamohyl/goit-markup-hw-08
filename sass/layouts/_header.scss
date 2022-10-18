@@ -2,20 +2,49 @@
     border-bottom-width: 1px;
     border-bottom-style: solid;
     border-bottom-color: #ECECEC;
-    @include font(inherit, 1.14, 0.02em, 500);
 
     & .logo {
-        margin-right: 93px;
         color: var(--black);
+
+        @include tablet {
+            margin-right: 88px;
+        }
+        
+        @include desktop {
+            margin-right: 92px;
+        }
     }
 
     &>.container {
-        @extend %flex-centered;
+        @include tablet {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    &__menu-icon {
+        margin: 10px 0;
+        @include tablet {
+            display: none;
+        }
+    }
+
+    @include tablet {
+        @include font(inherit, 1.14, 0.02em, 500);
+    }    
+}
+
+.menu, .contacts {
+    @media screen and (max-width: 768px) {
+        display: none;    
     }
 }
 
 .navigation {
-    @extend %flex-centered;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .menu {
@@ -49,31 +78,56 @@
             position: absolute;
             bottom: -1px;
         }
-    }    
+    }
 }
 
 .contacts {
-    display: flex;
     margin-left: auto;
 
-    &__item {
-            @extend %flex-centered;
-        }
-    
     &__item + &__item {
-        margin-left: 50px;
+        margin-top: 10px;
+
+        @include desktop {
+            margin-top: 0;
+            margin-left: 50px;
+        }
     }
-    
+
     &__link {
         display: flex;
-        padding-top: 32px;
-        padding-bottom: 32px;
-    
+        align-items: center;
         color: var(--second-primary-color);
+
+        @include desktop {
+            padding-top: 32px;
+            padding-bottom: 32px;
+        }
     }
 
     &__icon {
-        margin-right: 10px;
+        margin-right: 8px;
         fill: currentColor;
+
+        @include desktop{
+            margin-right: 10px;
+
+            &--mail {
+                width: 16px;
+                height: 12px;
+            }
+            &--phone {
+                width: 10px;
+                height: 16px;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            font-size: 12px;
+            line-height: 1.17;       
+        }
+    }
+
+    @include desktop {
+        display: flex;
     }
 }
