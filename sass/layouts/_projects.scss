@@ -65,9 +65,7 @@
     display: flex;
     flex-wrap: wrap;
 
-    &__item {
-        margin-right: 30px;
-        
+    &__item {        
         box-sizing: border-box;
 
         &:not(:last-child) {
@@ -75,6 +73,7 @@
         }
 
         @include tablet {
+            margin-right: 30px;
             flex-basis: calc((100% - 30px) / 2);
         }
 

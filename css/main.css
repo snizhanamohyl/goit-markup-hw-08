@@ -1047,7 +1047,6 @@ input[type=textarea] {
   flex-wrap: wrap;
 }
 .card-list__item {
-  margin-right: 30px;
   box-sizing: border-box;
 }
 .card-list__item:not(:last-child) {
@@ -1055,6 +1054,7 @@ input[type=textarea] {
 }
 @media screen and (min-width: 768px) {
   .card-list__item {
+    margin-right: 30px;
     flex-basis: calc((100% - 30px) / 2);
   }
 }
