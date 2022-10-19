@@ -28,6 +28,10 @@
 
         &--main {
             padding: 6px 25px;
+
+            @media screen and (max-width: 380px) {
+                padding: 5px 22px;
+            }
         }
 
         &:hover,
