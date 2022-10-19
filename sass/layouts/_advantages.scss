@@ -36,7 +36,7 @@
         @include font(inherit, 1.14, 0.03em, 700);
         text-transform: uppercase;
 
-        @media screen and (max-width: 768px) {
+        @media screen and (max-width: 767px) {
             text-align: center;            
         }
     }
@@ -47,7 +47,7 @@
     }
 
     @include tablet {
-        width: calc((100% - 30px) / 2);
+        flex-basis: calc((100% - 30px) / 2);
 
         &:nth-child(2n+1) {
             margin-right: 30px;
@@ -60,7 +60,7 @@
 
     @include desktop {
         flex-wrap: nowrap;
-        width: calc((100% - 90px) / 4);
+        flex-basis: calc((100% - 90px) / 4);
 
         &:not(:last-child) {
             margin-right: 30px;

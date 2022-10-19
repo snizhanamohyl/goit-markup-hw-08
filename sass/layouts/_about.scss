@@ -1,14 +1,18 @@
 .about {
-    @media screen and (max-width: 1200px) {
+    @media screen and (max-width: 1199px) {
         display: none;
     }
-} 
 
-.about__list {
-    display: flex;
+    &__list {
+        display: flex;
 
-    & .about__item:not(:last-child) {
-        margin-right: 30px;
+        & .about__item:not(:last-child) {
+            margin-right: 30px;
+        }
+    }
+
+    &__item {
+        flex-basis: calc((100% - 60px) / 3);
     }
 }
 

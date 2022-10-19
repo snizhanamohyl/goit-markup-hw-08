@@ -1,6 +1,6 @@
 .team {
     background-color: var(--additional-background-color);
-    min-width: 480px;
+    min-width: 320px;
 
     &__list {
         @include tablet {
@@ -24,11 +24,10 @@
     
     @include desktop {
         margin-bottom: 0;
-        margin-right: 30px;
     }
 
     @include tablet {
-        width: calc((100% - 30px) / 2);
+        flex-basis: calc((100% - 30px) / 2);
 
         &:nth-child(2n+1) {
             margin-right: 30px;
@@ -41,7 +40,7 @@
 
     @include desktop {
         flex-wrap: nowrap;
-        width: calc((100% - 90px) / 4);
+        flex-basis: calc((100% - 90px) / 4);
         margin-bottom: 0;
 
         &:not(:last-child) {
