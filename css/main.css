@@ -819,7 +819,7 @@ section.other-paddings {
   left: 0;
   background: rgba(0, 0, 0, 0.2);
   opacity: 1;
-  transition: opacity var(--transition-time) var(--transition-function);
+  transition: opacity 500ms var(--transition-function);
 }
 
 .modal {
@@ -844,6 +844,7 @@ section.other-paddings {
 }
 
 .backdrop.is-hidden {
+  display: block;
   opacity: 0;
   pointer-events: none;
 }

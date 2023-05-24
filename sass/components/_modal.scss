@@ -6,7 +6,7 @@
     left: 0;
     background: rgba(0, 0, 0, 0.2);
     opacity: 1;
-    transition: opacity var(--transition-time) var(--transition-function);
+    transition: opacity 500ms var(--transition-function);
 }
 
 .modal {
@@ -19,6 +19,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
 
+
     @include mobile {
         width: 450px;
     }
@@ -29,6 +30,7 @@
 }
 
 .backdrop.is-hidden {
+    display: block;
     opacity: 0;
     pointer-events: none;
 }
