@@ -87,14 +87,14 @@
             <div class="container">
                 <h1 class="projects__title visually-hidden">Наші роботи</h1>
                 <ul class="btn-list list">
-                    <li class="btn-list__item"><button class="btn-list__button btn-list__button--main" type="button">Усі</button></li>
-                    <li class="btn-list__item"><button class="btn-list__button" type="button">Веб-сайти</button></li>
-                    <li class="btn-list__item"><button class="btn-list__button" type="button">Додатки</button></li>
-                    <li class="btn-list__item"><button class="btn-list__button" type="button">Дизайн</button></li>
-                    <li class="btn-list__item"><button class="btn-list__button" type="button">Маркетинг</button></li>
+                    <li class="btn-list__item"><button class="btn-list__button btn-list__button--main active" type="button" value="all">Усі</button></li>
+                    <li class="btn-list__item"><button class="btn-list__button" type="button" value="web-site">Веб-сайти</button></li>
+                    <li class="btn-list__item"><button class="btn-list__button" type="button" value="app">Додатки</button></li>
+                    <li class="btn-list__item"><button class="btn-list__button" type="button" value="design">Дизайн</button></li>
+                    <li class="btn-list__item"><button class="btn-list__button" type="button" value="marketing">Маркетинг</button></li>
                 </ul>
-                <ul class="card-list list">
-                    <li class="card-list__item item">
+                <ul class="card-list list" data-category="web-site">
+                    <li class="card-list__item item" data-category="web-site">
                         <a class="card link" href="#">
                             <div class="card__img-wrap">
                                 <picture>
@@ -124,7 +124,7 @@
                             </div>
                         </a>
                     </li>
-                    <li class="card-list__item item">
+                    <li class="card-list__item item" data-category="design">
                         <a class="card link" href="#">
                             <div class="card__img-wrap">
                                 <picture>
@@ -154,7 +154,7 @@
                             </div>
                         </a>
                     </li>
-                    <li class="card-list__item item">
+                    <li class="card-list__item item" data-category="app">
                         <a class="card link" href="#">
                             <div class="card__img-wrap">
                                 <picture>
@@ -189,7 +189,7 @@
                             </div>          
                         </a>
                     </li>
-                    <li class="card-list__item item">
+                    <li class="card-list__item item" data-category="marketing">
                         <a class="card link" href="#">
                             <div class="card__img-wrap">
                                 <picture>
@@ -219,7 +219,7 @@
                             </div>        
                         </a>
                     </li>
-                    <li class="card-list__item item">
+                    <li class="card-list__item item" data-category="app">
                         <a class="card link" href="#">
                             <div class="card__img-wrap">
                                 <picture>
@@ -249,7 +249,7 @@
                             </div>      
                         </a>
                     </li>
-                    <li class="card-list__item item">
+                    <li class="card-list__item item" data-category="web-site">
                         <a class="card link" href="#">
                             <div class="card__img-wrap">
                                 <picture>
@@ -280,7 +280,7 @@
                             </div>                   
                         </a>
                     </li>
-                    <li class="card-list__item item">
+                    <li class="card-list__item item" data-category="design">
                         <a class="card link" href="#">
                             <div class="card__img-wrap">
                                 <picture>
@@ -311,7 +311,7 @@
                             </div>                
                         </a>
                     </li>
-                    <li class="card-list__item item">
+                    <li class="card-list__item item" data-category="marketing">
                         <a class="card link" href="#">
                             <div class="card__img-wrap">
                                 <picture>
@@ -342,7 +342,7 @@
                             </div>   
                         </a>
                     </li>
-                    <li class="card-list__item item">
+                    <li class="card-list__item item" data-category="app">
                         <a class="card link" href="#">
                             <div class="card__img-wrap">
                                 <picture>
@@ -444,5 +444,6 @@
             </form>>
         </div>
         <script src="./js/mobile-menu.js"></script>
+        <script src="./js/filter.js"></script>
     </footer>
 </body>
