@@ -82,31 +82,17 @@
     width: 100%;
     display: flex;
     flex-wrap: wrap;
+    gap: 30px;
 
     &__item {        
         box-sizing: border-box;
 
-        &:not(:last-child) {
-            margin-bottom: 30px;
-        }
-
         @include tablet {
-            margin-right: 30px;
             flex-basis: calc((100% - 30px) / 2);
-        }
-
-        @media screen and (min-width: 768px) and (max-width: 1199px) {
-            &:nth-child(2n) {
-                margin-right: 0;
-            }
         }
 
         @include desktop {
             flex-basis: calc((100% - 60px) / 3);
-
-            &:nth-child(3n) {
-                margin-right: 0;
-            }
         }
 
     }

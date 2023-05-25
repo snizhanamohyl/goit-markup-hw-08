@@ -10,7 +10,7 @@
 }
 
 .modal {
-    padding: 40px;
+    padding: 20px;
     min-width: 290px;
     width: 90%;
     background-color: var(--white);
@@ -21,6 +21,7 @@
 
 
     @include mobile {
+        padding: 40px;
         width: 450px;
     }
 
